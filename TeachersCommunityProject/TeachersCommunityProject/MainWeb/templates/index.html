@@ -9,111 +9,25 @@
        <div class="content-wrap">
 
 	 <div id="oc-images"
-       class="owl-carousel owl-carousel-full news-carousel header-stick bottommargin-lg carousel-widget"
-       data-margin="3" data-loop="true" data-stage-padding="50" data-pagi="false" data-items-sm="1"
-										  data-items-xl="2">
+	       class="owl-carousel owl-carousel-full news-carousel header-stick bottommargin-lg carousel-widget"
+	       data-margin="3" data-loop="true" data-stage-padding="50" data-pagi="false" data-items-sm="1"
+											  data-items-xl="2">
 
+	   {% for n in news %}
 	   <div class="oc-item">
-	     <a href="#"><img src="{% static 'images/bat-uul.jpg' %}" style="height: 401px;"></a>
+	     <a href="//"><img src="{% static "media/" %}{{n.newsImg}}" alt="Image 2" style="height: 401px;"></a>
 	     <div class="overlay">
 	       <div class="text-overlay">
 		 <span class="badge badge-danger">Онцгой</span>
 		 <div class="text-overlay-title">
-		   <h2>"Хотоо Д.Амарбаясгалан ЖДҮ-чнээр удирдуулахгүй, сонгуульд хамт өрсөлдье"</h2>
+		   <h2>{{n.title}}</h2>
 		 </div>
 
-		 <a href="#"
-      class="button button-reveal button-border button-light button-small button-rounded uppercase tright noleftmargin topmargin-sm"><span>Унших</span><i
-      class="icon-angle-right"></i></a>
+		 <a href="{% url "newsSingle" n.slug %}" class="button button-reveal button-border button-light button-small button-rounded uppercase tright noleftmargin topmargin-sm"><span>Унших</span><i class="icon-angle-right"></i></a>
 	       </div>
 	     </div>
 	   </div>
-	   <div class="oc-item">
-	     <a href="#"><img src="{% static 'images/corona.jpg' %}" alt="Image 2" style="height: 401px;"></a>
-	     <div class="overlay">
-	       <div class="text-overlay">
-		 <span class="badge badge-danger">Онцгой</span>
-		 <div class="text-overlay-title">
-		   <h2>Д.Нямхүү: Үдээс хойших шинжилгээгээр коронавирусийн халдварын 37 тохиолдол
-		     нэмэгдэж, 98 боллоо</h2>
-		 </div>
-
-		 <a href="#"
-      class="button button-reveal button-border button-light button-small button-rounded uppercase tright noleftmargin topmargin-sm"><span>Унших</span><i
-      class="icon-angle-right"></i></a>
-	       </div>
-	     </div>
-	   </div>
-	   <div class="oc-item">
-	     <a href="#"><img src="{% static 'images/corona.jpg' %}" style="height: 401px;" alt=""></a>
-	     <div class="overlay">
-	       <div class="text-overlay">
-		 <span class="badge badge-danger">Онцгой</span>
-		 <div class="text-overlay-title">
-		   <h2>Political, vulnerable citizens eradicate philanthropy.</h2>
-		 </div>
-		 <div class="text-overlay-meta">
-		   <span>8th Nov 2014</span>
-		 </div>
-		 <a href="#"
-      class="button button-reveal button-border button-light button-small button-rounded uppercase tright noleftmargin topmargin-sm"><span>Унших</span><i
-      class="icon-angle-right"></i></a>
-	       </div>
-	     </div>
-	   </div>
-	   <div class="oc-item">
-	     <a href="#"><img src="{% static 'images/corona.jpg' %}" style="height: 401px;" alt="Image 4"></a>
-	     <div class="overlay">
-	       <div class="text-overlay">
-		 <span class="badge badge-danger">Hot</span>
-		 <div class="text-overlay-title">
-		   <h2>Revitalize Bloomberg accelerate human potential.</h2>
-		 </div>
-		 <div class="text-overlay-meta">
-		   <span>30th Jan 2014</span>
-		 </div>
-		 <a href="#"
-      class="button button-reveal button-border button-light button-small button-rounded uppercase tright noleftmargin topmargin-sm"><span>Унших</span><i
-      class="icon-angle-right"></i></a>
-	       </div>
-	     </div>
-	   </div>
-	   <div class="oc-item">
-	     <a href="#"><img src="{% static 'images/corona.jpg' %}" style="height: 401px;" alt="Image 5"></a>
-	     <div class="overlay">
-	       <div class="text-overlay">
-		 <span class="badge badge-danger">Hot</span>
-		 <div class="text-overlay-title">
-		   <h2>Momentum tackling cross-agency coordination volunteer revitalize.</h2>
-		 </div>
-		 <div class="text-overlay-meta">
-		   <span>11th Feb 2014</span>
-		 </div>
-		 <a href="#"
-      class="button button-reveal button-border button-light button-small button-rounded uppercase tright noleftmargin topmargin-sm"><span>Унших</span><i
-      class="icon-angle-right"></i></a>
-	       </div>
-	       <div class="rounded-skill" data-color="#e74c3c" data-trackcolor="rgba(0,0,0,0.1)"
-							data-size="80" data-percent="40" data-width="7" data-animate="3000">4.0</div>
-	     </div>
-	   </div>
-	   <div class="oc-item">
-	     <a href="#"><img src="{% static 'images/corona.jpg' %}" style="height: 401px;" alt="Image 6"></a>
-	     <div class="overlay">
-	       <div class="text-overlay">
-		 <span class="badge badge-danger">Hot</span>
-		 <div class="text-overlay-title">
-		   <h2>Social responsibility Aga Khan health institutions.</h2>
-		 </div>
-		 <div class="text-overlay-meta">
-		   <span>27th Mar 2014</span>
-		 </div>
-		 <a href="#"
-      class="button button-reveal button-border button-light button-small button-rounded uppercase tright noleftmargin topmargin-sm"><span>Унших</span><i
-      class="icon-angle-right"></i></a>
-	       </div>
-	     </div>
-	   </div>
+	   {% endfor %}
 
 	 </div>
 
@@ -122,7 +36,9 @@
 
 	 <div class="container clearfix">
 	   <div class="fancy-title title-border">
-	     <h3>Улс төр</h3>
+	     {% with getTopCategoryName=topNews.0.categories.all.0 %}
+	     <h3>{{ getTopCategoryName.name  }}</h3>
+	     {% endwith %}
 	   </div>
 
 	   <div class="row bottommargin-sm clearfix">
@@ -131,15 +47,14 @@
 
 	       <div class="ipost clearfix">
 		 <div class="entry-image">
-		   <a href="#"><img class="image_fade" src="{% static 'images/bat-uul.jpg' %}" alt="Image"></a>
+		   <a href="//"><img class="image_fade" src="{% static 'media/' %}{{ topNews.0.newsImg }}" alt="Image"></a>
 		 </div>
 		 <div class="entry-title">
-		   <h3><a href="newscontent.html">Toyotas next minivan will let you shout at your kids
-		       without turning around</a></h3>
+		   <h3><a href="{% url "newsSingle" topNews.0.slug %}">{{ topNews.0.title }}</a></h3>
 		 </div>
 		 <ul class="entry-meta clearfix">
-		   <li><i class="icon-calendar3"></i> 2020 оны 5-р сарын 12</li>
-		   <li><a href="newscontent.html#comments"><i class="icon-comments"></i> 31
+		   <li><i class="icon-calendar3"></i>{{ topNews.0.created }}</li>
+		   <li><a href="//"><i class="icon-comments"></i>{{topNews.1.comments.all.count}}
 		       Сэтгэгдэл</a></li>
 
 		 </ul>
@@ -173,7 +88,9 @@
 	   </div>
 
 	   <div class="fancy-title title-border">
-	     <h3>Эдийн засаг</h3>
+	     {% with getTopCategoryName=topNews.1.categories.all.0 %}
+	     <h3>{{ getTopCategoryName.name  }}</h3>
+	     {% endwith %}
 	   </div>
 
 	   <div class="row bottommargin-sm clearfix">
@@ -182,16 +99,15 @@
 
 	       <div class="ipost clearfix">
 		 <div class="entry-image">
-		   <a href="#"><img class="image_fade" src="{% static 'images/mungu.jpg' %}" alt="Image"
+		   <a href="//"><img class="image_fade" src="{% static 'media/' %}{{ topNews.1.newsImg }}" alt="Image"
 								style="height:429px;"></a>
 		 </div>
 		 <div class="entry-title">
-		   <h3><a href="blog-single.html">СТАТИСТИК: Эхний дөрвөн сард 7.5 мянган хүн
-		       Ажилгүйдлийн даатгалын сангаас тэтгэмж авжээ.</a></h3>
+		   <h3><a href="{% url "newsSingle" topNews.1.slug %}">{{topNews.1.title}}</a></h3>
 		 </div>
 		 <ul class="entry-meta clearfix">
-		   <li><i class="icon-calendar3"></i> 2020 оны 5-р сарын 12</li>
-		   <li><a href="blog-single.html#comments"><i class="icon-comments"></i> 22
+		   <li><i class="icon-calendar3"></i>{{topNews.1.created}}</li>
+		   <li><a href="//"><i class="icon-comments"></i>{{topNews.1.comments.all.count}}
 		       Сэтгэгдэл</a></li>
 
 		 </ul>
@@ -232,56 +148,24 @@
 		    <!--Онцлох medeenii tab-->
 		    <div id="popular-post-list-sidebar">
 
+		    {% for i in news %}
 		      <div class="spost clearfix">
 			<div class="entry-image">
 			  <a href="#" class="nobg"><img class="rounded-circle"
-				   src="{% static 'images/magazine/small/3.jpg' %}" alt=""></a>
+				   src="{% static 'media/' %}{{i.newsImg}}" alt=""></a>
 			</div>
 			<div class="entry-c">
 			  <div class="entry-title">
-			    <h4><a href="#">STATIC MEDEENII GARCHIG1(Онцлох)</a>
+			    <h4><a href="{% url "newsSingle" i.slug %}">{{i.title}}</a>
 			    </h4>
 			  </div>
 			  <ul class="entry-meta">
-			    <li><i class="icon-comments-alt"></i> 35
+			    <li><i class="icon-comments-alt"></i> {{i.comments.all.count}}
 			      Сэтгэгдэл(Онцлох)</li>
 			  </ul>
 			</div>
 		      </div>
-
-		      <div class="spost clearfix">
-			<div class="entry-image">
-			  <a href="#" class="nobg"><img class="rounded-circle"
-				   src="{% static 'images/magazine/small/2.jpg' %}" alt=""></a>
-			</div>
-			<div class="entry-c">
-			  <div class="entry-title">
-			    <h4><a href="#">STATIC MEDEENII GARCHIG1(Онцлох)</a>
-			    </h4>
-			  </div>
-			  <ul class="entry-meta">
-			    <li><i class="icon-comments-alt"></i> 24
-			      Сэтгэгдэл(Онцлох)</li>
-			  </ul>
-			</div>
-		      </div>
-
-		      <div class="spost clearfix">
-			<div class="entry-image">
-			  <a href="#" class="nobg"><img class="rounded-circle"
-				   src="{% static 'images/magazine/small/1.jpg' %}" alt=""></a>
-			</div>
-			<div class="entry-c">
-			  <div class="entry-title">
-			    <h4><a href="#">STATIC MEDEENII GARCHIG1(Онцлох)</a>
-			    </h4>
-			  </div>
-			  <ul class="entry-meta">
-			    <li><i class="icon-comments-alt"></i> 19
-			      Сэтгэгдэл(Онцлох)</li>
-			  </ul>
-			</div>
-		      </div>
+		    {% endfor %}
 
 		    </div>
 		  </div>
@@ -289,53 +173,22 @@
 		    <!--Сүүлийн үеийн medeenii tab-->
 		    <div id="recent-post-list-sidebar">
 
+		    {% for i in latestNews %}
 		      <div class="spost clearfix">
 			<div class="entry-image">
-			  <a href="#" class="nobg"><img class="rounded-circle"
-				   src="{% static 'images/magazine/small/1.jpg' %}" alt=""></a>
+			  <a href="//" class="nobg"><img class="rounded-circle"
+				   src="{% static 'media/' %}{{i.newsImg}}" alt=""></a>
 			</div>
 			<div class="entry-c">
 			  <div class="entry-title">
-			    <h4><a href="#">STATIC MEDEENII GARCHIG1(Сүүлийн
-				үеийн)</a></h4>
+			    <h4><a href="{% url "newsSingle" i.slug %}">{{i.title}}</a></h4>
 			  </div>
 			  <ul class="entry-meta">
-			    <li>он сар өдөр(Сүүлийн үеийн)</li>
+			    <li>{{i.created}}</li>
 			  </ul>
 			</div>
 		      </div>
-
-		      <div class="spost clearfix">
-			<div class="entry-image">
-			  <a href="#" class="nobg"><img class="rounded-circle"
-				   src="{% static 'images/magazine/small/2.jpg' %}" alt=""></a>
-			</div>
-			<div class="entry-c">
-			  <div class="entry-title">
-			    <h4><a href="#">STATIC MEDEENII GARCHIG1(Сүүлийн
-				үеийн)</a></h4>
-			  </div>
-			  <ul class="entry-meta">
-			    <li>он сар өдөр(Сүүлийн үеийн)</li>
-			  </ul>
-			</div>
-		      </div>
-
-		      <div class="spost clearfix">
-			<div class="entry-image">
-			  <a href="#" class="nobg"><img class="rounded-circle"
-				   src="{% static 'images/magazine/small/3.jpg' %}" alt=""></a>
-			</div>
-			<div class="entry-c">
-			  <div class="entry-title">
-			    <h4><a href="#">STATIC MEDEENII GARCHIG1(Сүүлийн
-				үеийн)</a></h4>
-			  </div>
-			  <ul class="entry-meta">
-			    <li>он сар өдөр(Сүүлийн үеийн)</li>
-			  </ul>
-			</div>
-		      </div>
+		    {% endfor %}
 
 		    </div>
 		  </div>
